@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Výdaje</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        max-width: 100%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <h1>MOCKED DATA</h1>
+    </div>
+    <canvas id="myChart"></canvas>
+    <script>
+      const ctx = document.getElementById("myChart").getContext("2d");
+      const myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [
+            "Júl 2022",
+            "August 2022",
+            "September 2022",
+            "Október 2022",
+            "November 2022",
+            "December 2022",
+            "Január 2023",
+            "Február 2023",
+            "Marec 2023",
+            "Apríl 2023",
+            "Máj 2023",
+            "Jún 2023",
+            "Júl 2023",
+            "August 2023",
+            "September 2023",
+            "Október 2023",
+            "November 2023",
+            "December 2023",
+            "Január 2024",
+            "Február 2024",
+            "Marec 2024",
+            "Apríl 2024",
+            "Máj 2024",
+            "Jún 2024",
+            "Júl 2024",
+          ],
+          datasets: [
+            {
+              label: "Výbery z bankomatu",
+              data: [
+                65, 225, 190, 185, 205, 480, 45, 260, 175, 215, 235, 165, 105,
+                65, 115, 95, 435, 115, 35, 25, 215, 45, 85, 315, 255,
+              ],
+              backgroundColor: "#ff2c2c",
+              stack: "stack1",
+            },
+            {
+              label: "Potraviny",
+              data: [
+                50.3, 320.1, 200.2, 85.5, 160.3, 230.6, 200.1, 95.2, 115.8,
+                160.7, 158.4, 192.0, 214.8, 295.6, 250.5, 330.1, 335.9, 305.8,
+                220.1, 118.8, 205.7, 130.3, 325.7, 180.5, 205.1,
+              ],
+              backgroundColor: "#fcb90d",
+              stack: "stack1",
+            },
+            {
+              label: "Osobné prevody",
+              data: [
+                0, 12, 0, 0, 38, 0, 0, 0, 30, 12, 25, 0, 0, 135, 350, 2020, 130,
+                185, 250, 345, 255, 300, 265, 310, 400,
+              ],
+              backgroundColor: "#4095ff",
+              stack: "stack1",
+            },
+            {
+              label: "Subscriptions",
+              data: [
+                0, 6, 6, 7, 11, 0, 0, 0, 6, 6, 6, 6, 6, 6, 7, 7, 11, 0, 0, 2, 9,
+                7, 7, 15, 16,
+              ],
+              backgroundColor: "#72df78",
+              stack: "stack1",
+            },
+            {
+              label: "Hry",
+              data: [
+                0, 0, 0, 0, 10, 45, 70, 0, 0, 35, 0, 45, 0, 0, 45, 105, 70, 10,
+                30, 32, 0, 65, 0, 10, 40,
+              ],
+              backgroundColor: "#d900ff",
+              stack: "stack1",
+            },
+            {
+              label: "Splátky, poplatky banke",
+              data: [
+                2, 52, 51, 79, 79, 77, 77, 78, 77, 79, 77, 85, 85, 85, 85, 103,
+                225, 175, 175, 175, 175, 175, 175, 175, 170,
+              ],
+              backgroundColor: "#0012ff",
+              stack: "stack1",
+            },
+            {
+              label: "Oblečenie + domácnosť",
+              data: [
+                16, 0, 310, 0, 6, 20, 0, 0, 0, 25, 0, 0, 0, 0, 0, 40, 34, 32,
+                37, 73, 0, 65, 0, 75, 9,
+              ],
+              backgroundColor: "#00f5ff",
+              stack: "stack1",
+            },
+            {
+              label: "Bary",
+              data: [
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32,
+                0, 0, 36, 27,
+              ],
+              backgroundColor: "#ff4cd0",
+              stack: "stack1",
+            },
+            {
+              label: "Iné",
+              data: [
+                2, 185, 260, 295, 9, 16, 39, 0, 63, 22, 70, 36, 14, 72, 0, 220,
+                41, 300, 15, 850, 7, 95, 630, 450, 32,
+              ],
+              backgroundColor: "#bcbcbc",
+              stack: "stack1",
+            },
+            {
+              label: "Trafiky + Benzínky",
+              data: [
+                0, 5, 73, 15, 10, 0, 0, 0, 0, 18, 0, 23, 40, 70, 80, 23, 19, 36,
+                50, 42, 78, 105, 155, 22, 24,
+              ],
+              backgroundColor: "#1e0f0f",
+              stack: "stack1",
+            },
+            {
+              label: "Doprava",
+              data: [
+                20, 50, 0, 2, 0, 11, 4, 2, 78, 6, 30, 43, 98, 165, 98, 140, 180,
+                58, 121, 125, 97, 125, 88, 65, 0,
+              ],
+              backgroundColor: "#00d2ff",
+              stack: "stack1",
+            },
+            {
+              label: "Reštaurácie",
+              data: [
+                16, 16, 0, 29, 0, 29, 0, 0, 46, 0, 41, 0, 18, 36, 47, 80, 80,
+                28, 85, 88, 73, 90, 95, 45, 0,
+              ],
+              backgroundColor: "#ffae00",
+              stack: "stack1",
+            },
+            {
+              label: "Lieky",
+              data: [
+                0, 0, 0, 3, 0, 0, 0, 0, 14, 8, 15, 12, 0, 0, 0, 15, 0, 40, 0,
+                15, 16, 0, 22, 27, 0,
+              ],
+              backgroundColor: "#749fff",
+              stack: "stack1",
+            },
+            {
+              label: "Telekomunikácie",
+              data: [
+                0, 73, 65, 60, 58, 63, 60, 60, 58, 60, 58, 58, 68, 67, 60, 108,
+                49, 34, 0, 0, 8, 0, 0, 8, 0,
+              ],
+              backgroundColor: "#2a8232",
+              stack: "stack1",
+            },
+            {
+              label: "Elektornika",
+              data: [
+                0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 15, 0, 0, 0, 190, 0, 0, 72, 0,
+                8, 0, 800, 0, 0,
+              ],
+              backgroundColor: "#54e7ff",
+              stack: "stack1",
+            },
+            {
+              label: "Celkovo minuté",
+              data: [
+                160, 940, 1160, 750, 580, 960, 530, 480, 660, 645, 725, 680,
+                640, 990, 1140, 3480, 1605, 1310, 1080, 1880, 1170, 1200, 2650,
+                1750, 1180,
+              ],
+              borderColor: "#ff621c",
+              type: "line",
+            },
+          ],
+        },
+        options: {
+          scales: {
+            x: {
+              stacked: true,
+            },
+            y: {
+              stacked: true,
+            },
+          },
+          plugins: {
+            legend: {
+              position: "top",
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  let label = context.dataset.label || "";
+                  if (label) {
+                    label += ": ";
+                  }
+                  if (context.parsed.y !== null) {
+                    label += context.parsed.y.toFixed(2);
+                  }
+                  return label;
+                },
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
