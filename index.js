@@ -6,7 +6,8 @@ const { addExpense, categories, findCommonPatterns } = require('./expenseUtils')
 
 async function main() {
   try {
-    const dataBuffer = await fs.readFile("9.pdf");
+    // Change your pdf name here
+    const dataBuffer = await fs.readFile("changeHere.pdf");
 
     // Parse PDF and extract records
     const lines = await parsePDF(dataBuffer);
